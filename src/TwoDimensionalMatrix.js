@@ -4,10 +4,10 @@ function TwoDimensionalMatrix() {
 	var columnCount = 1;
 
 	this.setValue = function(x, y, value) {
-		if (typeof(matrix[x] == "undefined") {
+		if (typeof(matrix[x] == "undefined")) {
 			matrix[x] = [];
 		}
-		if (typeof(matrix[y] == "undefined") {
+		if (typeof(matrix[y] == "undefined")) {
 			matrix[y] = [];
 		}
 		matrix[x][y] = value;
