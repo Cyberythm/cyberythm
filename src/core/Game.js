@@ -1,9 +1,8 @@
 (function() {
 	Cyberythm.core.Game = function() {
-		var Level = new Cyberythm.core.map.Level();
+		var level = new Cyberythm.core.map.Level();
+		var renderer = new Cyberythm.core.ui.Renderer();
 		
-		(function init(){
-			console.info(Level.getRows() + ' - ' + Level.getCols());
-		}());
+		renderer.go(level);
 	};	
 }());

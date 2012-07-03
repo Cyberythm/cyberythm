@@ -25,16 +25,25 @@
 				return null; 
 			}
 			var pos = 0;
-			pos += (y - 1) * rows;
+			pos += (y - 1) * level.getRows();
 			pos += x;
 			return pos;
 		};
 		
+		var setLevel = function(l){
+			level = l;
+			for(var n = 0; n < level.getCols(); n++){
+				for(var m = 0; m < level.getRows(); m++){
+					fields[getFieldPosition(n,m)] = new Cyberythm.core.map.Field(level.getHeight(n,m), level.isLight(n,m));
+				}
+			}
+		};
+		
 		this.init = (function(){
-			level = new Cyberythm.levels.basic.Level001();
+			setLevel(new Cyberythm.levels.basic.Level001());
 			return function(l){
 				if(l !== undefined){
-					level = new l();	
+					setLevel(new l());	
 				}
 			};
 		}());

@@ -1,9 +1,15 @@
 (function() {	
-	Cyberythm.core.map.Field = function() {
+	Cyberythm.core.map.Field = function(lev, lig, l) {
 	    var level = 0;
 	    var lightable = false;
 	    var lit = false;
 	
+	    (function setup(){
+	    	if(lev !== undefined){ level = lev; }
+	    	if(lig !== undefined){ lightable = lig; }
+	    	if(l !== undefined){ lit = l; }
+	    }());
+	    
 	    this.setLevel = function(value) {
 	        level = value;
 	    };
